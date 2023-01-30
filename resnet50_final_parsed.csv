@@ -1,0 +1,126 @@
+Name,Type,Input Channels,Output Channels,Kernel Size,Stride,Padding
+conv1,Conv2D,3,64,"(7, 7)","(2, 2)","(3, 3)"
+bn1,BatchNorm2D,64
+relu,ReLU
+maxpool,MaxPool2D,3,2,1
+layer1.0.conv1,Conv2D,64,64,"(1, 1)","(1, 1)","(0, 0)"
+layer1.0.bn1,BatchNorm2D,64
+layer1.0.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)"
+layer1.0.bn2,BatchNorm2D,64
+layer1.0.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+layer1.0.bn3,BatchNorm2D,256
+layer1.0.relu,ReLU
+layer1.0.downsample.0,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+layer1.0.downsample.1,BatchNorm2D,256
+layer1.1.conv1,Conv2D,256,64,"(1, 1)","(1, 1)","(0, 0)"
+layer1.1.bn1,BatchNorm2D,64
+layer1.1.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)"
+layer1.1.bn2,BatchNorm2D,64
+layer1.1.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+layer1.1.bn3,BatchNorm2D,256
+layer1.1.relu,ReLU
+layer1.2.conv1,Conv2D,256,64,"(1, 1)","(1, 1)","(0, 0)"
+layer1.2.bn1,BatchNorm2D,64
+layer1.2.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)"
+layer1.2.bn2,BatchNorm2D,64
+layer1.2.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+layer1.2.bn3,BatchNorm2D,256
+layer1.2.relu,ReLU
+layer2.0.conv1,Conv2D,256,128,"(1, 1)","(1, 1)","(0, 0)"
+layer2.0.bn1,BatchNorm2D,128
+layer2.0.conv2,Conv2D,128,128,"(3, 3)","(2, 2)","(1, 1)"
+layer2.0.bn2,BatchNorm2D,128
+layer2.0.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+layer2.0.bn3,BatchNorm2D,512
+layer2.0.relu,ReLU
+layer2.0.downsample.0,Conv2D,256,512,"(1, 1)","(2, 2)","(0, 0)"
+layer2.0.downsample.1,BatchNorm2D,512
+layer2.1.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)"
+layer2.1.bn1,BatchNorm2D,128
+layer2.1.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)"
+layer2.1.bn2,BatchNorm2D,128
+layer2.1.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+layer2.1.bn3,BatchNorm2D,512
+layer2.1.relu,ReLU
+layer2.2.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)"
+layer2.2.bn1,BatchNorm2D,128
+layer2.2.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)"
+layer2.2.bn2,BatchNorm2D,128
+layer2.2.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+layer2.2.bn3,BatchNorm2D,512
+layer2.2.relu,ReLU
+layer2.3.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)"
+layer2.3.bn1,BatchNorm2D,128
+layer2.3.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)"
+layer2.3.bn2,BatchNorm2D,128
+layer2.3.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+layer2.3.bn3,BatchNorm2D,512
+layer2.3.relu,ReLU
+layer3.0.conv1,Conv2D,512,256,"(1, 1)","(1, 1)","(0, 0)"
+layer3.0.bn1,BatchNorm2D,256
+layer3.0.conv2,Conv2D,256,256,"(3, 3)","(2, 2)","(1, 1)"
+layer3.0.bn2,BatchNorm2D,256
+layer3.0.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+layer3.0.bn3,BatchNorm2D,1024
+layer3.0.relu,ReLU
+layer3.0.downsample.0,Conv2D,512,1024,"(1, 1)","(2, 2)","(0, 0)"
+layer3.0.downsample.1,BatchNorm2D,1024
+layer3.1.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+layer3.1.bn1,BatchNorm2D,256
+layer3.1.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+layer3.1.bn2,BatchNorm2D,256
+layer3.1.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+layer3.1.bn3,BatchNorm2D,1024
+layer3.1.relu,ReLU
+layer3.2.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+layer3.2.bn1,BatchNorm2D,256
+layer3.2.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+layer3.2.bn2,BatchNorm2D,256
+layer3.2.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+layer3.2.bn3,BatchNorm2D,1024
+layer3.2.relu,ReLU
+layer3.3.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+layer3.3.bn1,BatchNorm2D,256
+layer3.3.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+layer3.3.bn2,BatchNorm2D,256
+layer3.3.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+layer3.3.bn3,BatchNorm2D,1024
+layer3.3.relu,ReLU
+layer3.4.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+layer3.4.bn1,BatchNorm2D,256
+layer3.4.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+layer3.4.bn2,BatchNorm2D,256
+layer3.4.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+layer3.4.bn3,BatchNorm2D,1024
+layer3.4.relu,ReLU
+layer3.5.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+layer3.5.bn1,BatchNorm2D,256
+layer3.5.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+layer3.5.bn2,BatchNorm2D,256
+layer3.5.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+layer3.5.bn3,BatchNorm2D,1024
+layer3.5.relu,ReLU
+layer4.0.conv1,Conv2D,1024,512,"(1, 1)","(1, 1)","(0, 0)"
+layer4.0.bn1,BatchNorm2D,512
+layer4.0.conv2,Conv2D,512,512,"(3, 3)","(2, 2)","(1, 1)"
+layer4.0.bn2,BatchNorm2D,512
+layer4.0.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+layer4.0.bn3,BatchNorm2D,2048
+layer4.0.relu,ReLU
+layer4.0.downsample.0,Conv2D,1024,2048,"(1, 1)","(2, 2)","(0, 0)"
+layer4.0.downsample.1,BatchNorm2D,2048
+layer4.1.conv1,Conv2D,2048,512,"(1, 1)","(1, 1)","(0, 0)"
+layer4.1.bn1,BatchNorm2D,512
+layer4.1.conv2,Conv2D,512,512,"(3, 3)","(1, 1)","(1, 1)"
+layer4.1.bn2,BatchNorm2D,512
+layer4.1.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+layer4.1.bn3,BatchNorm2D,2048
+layer4.1.relu,ReLU
+layer4.2.conv1,Conv2D,2048,512,"(1, 1)","(1, 1)","(0, 0)"
+layer4.2.bn1,BatchNorm2D,512
+layer4.2.conv2,Conv2D,512,512,"(3, 3)","(1, 1)","(1, 1)"
+layer4.2.bn2,BatchNorm2D,512
+layer4.2.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+layer4.2.bn3,BatchNorm2D,2048
+layer4.2.relu,ReLU
+fc,Linear,2048,1000
