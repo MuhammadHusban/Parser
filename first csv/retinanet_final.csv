@@ -1,0 +1,1665 @@
+Name,Type,Input Channels,Output Channels,Kernel Size,Stride,Padding
+,"RetinaNet(
+  (backbone): BackboneWithFPN(
+    (body): IntermediateLayerGetter(
+      (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+      (layer1): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(64, eps=0.0)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(64, eps=0.0)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(256, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): FrozenBatchNorm2d(256, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(64, eps=0.0)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(64, eps=0.0)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(256, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(64, eps=0.0)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(64, eps=0.0)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(256, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (layer2): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): FrozenBatchNorm2d(512, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (3): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (layer3): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): FrozenBatchNorm2d(1024, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (3): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (4): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (5): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (layer4): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(512, eps=0.0)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(512, eps=0.0)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): FrozenBatchNorm2d(2048, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(512, eps=0.0)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(512, eps=0.0)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(512, eps=0.0)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(512, eps=0.0)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+    )
+    (fpn): FeaturePyramidNetwork(
+      (inner_blocks): ModuleList(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(2048, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (layer_blocks): ModuleList(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+      )
+      (extra_blocks): LastLevelP6P7(
+        (p6): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (p7): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+    )
+  )
+  (anchor_generator): AnchorGenerator()
+  (head): RetinaNetHead(
+    (classification_head): RetinaNetClassificationHead(
+      (conv): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+      )
+      (cls_logits): Conv2d(256, 819, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (regression_head): RetinaNetRegressionHead(
+      (conv): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+      )
+      (bbox_reg): Conv2d(256, 36, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+  (transform): GeneralizedRCNNTransform(
+      Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+      Resize(min_size=(800,), max_size=1333, mode='bilinear')
+  )
+)"
+backbone,"BackboneWithFPN(
+  (body): IntermediateLayerGetter(
+    (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): FrozenBatchNorm2d(64, eps=0.0)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(64, eps=0.0)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(64, eps=0.0)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(256, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): FrozenBatchNorm2d(256, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(64, eps=0.0)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(64, eps=0.0)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(256, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(64, eps=0.0)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(64, eps=0.0)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(256, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): FrozenBatchNorm2d(512, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): FrozenBatchNorm2d(1024, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (4): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (5): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer4): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(512, eps=0.0)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(512, eps=0.0)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): FrozenBatchNorm2d(2048, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(512, eps=0.0)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(512, eps=0.0)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(512, eps=0.0)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(512, eps=0.0)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+  )
+  (fpn): FeaturePyramidNetwork(
+    (inner_blocks): ModuleList(
+      (0): Conv2dNormActivation(
+        (0): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (1): Conv2dNormActivation(
+        (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (2): Conv2dNormActivation(
+        (0): Conv2d(2048, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+    )
+    (layer_blocks): ModuleList(
+      (0): Conv2dNormActivation(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (1): Conv2dNormActivation(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (2): Conv2dNormActivation(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (extra_blocks): LastLevelP6P7(
+      (p6): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      (p7): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    )
+  )
+)"
+backbone.body,"IntermediateLayerGetter(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): FrozenBatchNorm2d(64, eps=0.0)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(64, eps=0.0)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(256, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): FrozenBatchNorm2d(256, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(64, eps=0.0)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(256, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(64, eps=0.0)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(256, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): FrozenBatchNorm2d(512, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): FrozenBatchNorm2d(1024, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(512, eps=0.0)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(512, eps=0.0)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): FrozenBatchNorm2d(2048, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(512, eps=0.0)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(512, eps=0.0)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(512, eps=0.0)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(512, eps=0.0)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+)"
+backbone.body.conv1,Conv2D,3,64,"(7, 7)","(2, 2)","(3, 3)"
+backbone.body.bn1,Other,3,64,"(7, 7)","(2, 2)","(3, 3)"
+backbone.body.relu,ReLU
+backbone.body.maxpool,MaxPool2D,3,2,1
+backbone.body.layer1,Other,3,64,3,2,1
+backbone.body.layer1.0,Other,3,64,3,2,1
+backbone.body.layer1.0.conv1,Conv2D,64,64,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.0.bn1,Other,64,64,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.0.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer1.0.bn2,Other,64,64,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer1.0.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.0.bn3,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.0.relu,ReLU
+backbone.body.layer1.0.downsample,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.0.downsample.0,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.0.downsample.1,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.1,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.1.conv1,Conv2D,256,64,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.1.bn1,Other,256,64,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.1.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer1.1.bn2,Other,64,64,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer1.1.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.1.bn3,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.1.relu,ReLU
+backbone.body.layer1.2,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.2.conv1,Conv2D,256,64,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.2.bn1,Other,256,64,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.2.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer1.2.bn2,Other,64,64,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer1.2.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.2.bn3,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer1.2.relu,ReLU
+backbone.body.layer2,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.0,Other,64,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.0.conv1,Conv2D,256,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.0.bn1,Other,256,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.0.conv2,Conv2D,128,128,"(3, 3)","(2, 2)","(1, 1)"
+backbone.body.layer2.0.bn2,Other,128,128,"(3, 3)","(2, 2)","(1, 1)"
+backbone.body.layer2.0.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.0.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.0.relu,ReLU
+backbone.body.layer2.0.downsample,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.0.downsample.0,Conv2D,256,512,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer2.0.downsample.1,Other,256,512,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer2.1,Other,256,512,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer2.1.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.1.bn1,Other,512,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.1.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer2.1.bn2,Other,128,128,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer2.1.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.1.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.1.relu,ReLU
+backbone.body.layer2.2,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.2.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.2.bn1,Other,512,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.2.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer2.2.bn2,Other,128,128,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer2.2.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.2.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.2.relu,ReLU
+backbone.body.layer2.3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.3.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.3.bn1,Other,512,128,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.3.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer2.3.bn2,Other,128,128,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer2.3.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.3.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer2.3.relu,ReLU
+backbone.body.layer3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.0,Other,128,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.0.conv1,Conv2D,512,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.0.bn1,Other,512,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.0.conv2,Conv2D,256,256,"(3, 3)","(2, 2)","(1, 1)"
+backbone.body.layer3.0.bn2,Other,256,256,"(3, 3)","(2, 2)","(1, 1)"
+backbone.body.layer3.0.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.0.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.0.relu,ReLU
+backbone.body.layer3.0.downsample,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.0.downsample.0,Conv2D,512,1024,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer3.0.downsample.1,Other,512,1024,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer3.1,Other,512,1024,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer3.1.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.1.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.1.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.1.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.1.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.1.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.1.relu,ReLU
+backbone.body.layer3.2,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.2.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.2.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.2.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.2.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.2.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.2.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.2.relu,ReLU
+backbone.body.layer3.3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.3.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.3.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.3.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.3.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.3.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.3.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.3.relu,ReLU
+backbone.body.layer3.4,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.4.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.4.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.4.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.4.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.4.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.4.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.4.relu,ReLU
+backbone.body.layer3.5,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.5.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.5.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.5.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.5.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer3.5.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.5.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer3.5.relu,ReLU
+backbone.body.layer4,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.0,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.0.conv1,Conv2D,1024,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.0.bn1,Other,1024,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.0.conv2,Conv2D,512,512,"(3, 3)","(2, 2)","(1, 1)"
+backbone.body.layer4.0.bn2,Other,512,512,"(3, 3)","(2, 2)","(1, 1)"
+backbone.body.layer4.0.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.0.bn3,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.0.relu,ReLU
+backbone.body.layer4.0.downsample,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.0.downsample.0,Conv2D,1024,2048,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer4.0.downsample.1,Other,1024,2048,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer4.1,Other,1024,2048,"(1, 1)","(2, 2)","(0, 0)"
+backbone.body.layer4.1.conv1,Conv2D,2048,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.1.bn1,Other,2048,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.1.conv2,Conv2D,512,512,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer4.1.bn2,Other,512,512,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer4.1.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.1.bn3,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.1.relu,ReLU
+backbone.body.layer4.2,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.2.conv1,Conv2D,2048,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.2.bn1,Other,2048,512,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.2.conv2,Conv2D,512,512,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer4.2.bn2,Other,512,512,"(3, 3)","(1, 1)","(1, 1)"
+backbone.body.layer4.2.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.2.bn3,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.body.layer4.2.relu,ReLU
+backbone.fpn,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.inner_blocks,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.inner_blocks.0,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.inner_blocks.0.0,Conv2D,512,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.inner_blocks.1,Other,512,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.inner_blocks.1.0,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.inner_blocks.2,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.inner_blocks.2.0,Conv2D,2048,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.layer_blocks,Other,2048,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.layer_blocks.0,Other,2048,256,"(1, 1)","(1, 1)","(0, 0)"
+backbone.fpn.layer_blocks.0.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.fpn.layer_blocks.1,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.fpn.layer_blocks.1.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.fpn.layer_blocks.2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.fpn.layer_blocks.2.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.fpn.extra_blocks,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+backbone.fpn.extra_blocks.p6,Conv2D,256,256,"(3, 3)","(2, 2)","(1, 1)"
+backbone.fpn.extra_blocks.p7,Conv2D,256,256,"(3, 3)","(2, 2)","(1, 1)"
+anchor_generator,Other,256,256,"(3, 3)","(2, 2)","(1, 1)"
+head,Other,256,256,"(3, 3)","(2, 2)","(1, 1)"
+head.classification_head,Other,256,256,"(3, 3)","(2, 2)","(1, 1)"
+head.classification_head.conv,Other,256,256,"(3, 3)","(2, 2)","(1, 1)"
+head.classification_head.conv.0,Other,256,256,"(3, 3)","(2, 2)","(1, 1)"
+head.classification_head.conv.0.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.classification_head.conv.0.1,ReLU
+head.classification_head.conv.1,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.classification_head.conv.1.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.classification_head.conv.1.1,ReLU
+head.classification_head.conv.2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.classification_head.conv.2.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.classification_head.conv.2.1,ReLU
+head.classification_head.conv.3,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.classification_head.conv.3.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.classification_head.conv.3.1,ReLU
+head.classification_head.cls_logits,Conv2D,256,819,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head,Other,256,819,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv,Other,256,819,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.0,Other,256,819,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.0.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.0.1,ReLU
+head.regression_head.conv.1,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.1.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.1.1,ReLU
+head.regression_head.conv.2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.2.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.2.1,ReLU
+head.regression_head.conv.3,Other,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.3.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)"
+head.regression_head.conv.3.1,ReLU
+head.regression_head.bbox_reg,Conv2D,256,36,"(3, 3)","(1, 1)","(1, 1)"
+transform,Other,256,36,"(3, 3)","(1, 1)","(1, 1)"
+,"RetinaNet(
+  (backbone): BackboneWithFPN(
+    (body): IntermediateLayerGetter(
+      (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+      (layer1): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(64, eps=0.0)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(64, eps=0.0)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(256, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): FrozenBatchNorm2d(256, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(64, eps=0.0)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(64, eps=0.0)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(256, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(64, eps=0.0)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(64, eps=0.0)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(256, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (layer2): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): FrozenBatchNorm2d(512, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (3): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(128, eps=0.0)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(128, eps=0.0)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(512, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (layer3): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): FrozenBatchNorm2d(1024, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (3): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (4): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (5): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(256, eps=0.0)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(256, eps=0.0)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (layer4): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(512, eps=0.0)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(512, eps=0.0)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): FrozenBatchNorm2d(2048, eps=0.0)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(512, eps=0.0)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(512, eps=0.0)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): FrozenBatchNorm2d(512, eps=0.0)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): FrozenBatchNorm2d(512, eps=0.0)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+          (relu): ReLU(inplace=True)
+        )
+      )
+    )
+    (fpn): FeaturePyramidNetwork(
+      (inner_blocks): ModuleList(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(2048, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (layer_blocks): ModuleList(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+      )
+      (extra_blocks): LastLevelP6P7(
+        (p6): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (p7): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+    )
+  )
+  (anchor_generator): AnchorGenerator()
+  (head): RetinaNetHead(
+    (classification_head): RetinaNetClassificationHead(
+      (conv): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+      )
+      (cls_logits): Conv2d(256, 819, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (regression_head): RetinaNetRegressionHead(
+      (conv): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+      )
+      (bbox_reg): Conv2d(256, 36, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+  (transform): GeneralizedRCNNTransform(
+      Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+      Resize(min_size=(800,), max_size=1333, mode='bilinear')
+  )
+)",,,,,,
+backbone,"BackboneWithFPN(
+  (body): IntermediateLayerGetter(
+    (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): FrozenBatchNorm2d(64, eps=0.0)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(64, eps=0.0)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(64, eps=0.0)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(256, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): FrozenBatchNorm2d(256, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(64, eps=0.0)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(64, eps=0.0)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(256, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(64, eps=0.0)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(64, eps=0.0)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(256, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): FrozenBatchNorm2d(512, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(128, eps=0.0)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(128, eps=0.0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(512, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): FrozenBatchNorm2d(1024, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (4): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (5): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(256, eps=0.0)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(256, eps=0.0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer4): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(512, eps=0.0)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(512, eps=0.0)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): FrozenBatchNorm2d(2048, eps=0.0)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(512, eps=0.0)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(512, eps=0.0)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): FrozenBatchNorm2d(512, eps=0.0)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): FrozenBatchNorm2d(512, eps=0.0)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+        (relu): ReLU(inplace=True)
+      )
+    )
+  )
+  (fpn): FeaturePyramidNetwork(
+    (inner_blocks): ModuleList(
+      (0): Conv2dNormActivation(
+        (0): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (1): Conv2dNormActivation(
+        (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (2): Conv2dNormActivation(
+        (0): Conv2d(2048, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+    )
+    (layer_blocks): ModuleList(
+      (0): Conv2dNormActivation(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (1): Conv2dNormActivation(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (2): Conv2dNormActivation(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (extra_blocks): LastLevelP6P7(
+      (p6): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      (p7): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    )
+  )
+)",,,,,,
+backbone.body,"IntermediateLayerGetter(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): FrozenBatchNorm2d(64, eps=0.0)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(64, eps=0.0)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(256, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): FrozenBatchNorm2d(256, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(64, eps=0.0)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(256, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(64, eps=0.0)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(64, eps=0.0)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(256, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): FrozenBatchNorm2d(512, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(128, eps=0.0)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(128, eps=0.0)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(512, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): FrozenBatchNorm2d(1024, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(256, eps=0.0)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(256, eps=0.0)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(1024, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(512, eps=0.0)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(512, eps=0.0)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): FrozenBatchNorm2d(2048, eps=0.0)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(512, eps=0.0)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(512, eps=0.0)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): FrozenBatchNorm2d(512, eps=0.0)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): FrozenBatchNorm2d(512, eps=0.0)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): FrozenBatchNorm2d(2048, eps=0.0)
+      (relu): ReLU(inplace=True)
+    )
+  )
+)",,,,,,
+backbone.body.conv1,Conv2D,3,64,"(7, 7)","(2, 2)","(3, 3)",
+backbone.body.bn1,Other,3,64,"(7, 7)","(2, 2)","(3, 3)",
+backbone.body.relu,ReLU,,,,,,
+backbone.body.maxpool,MaxPool2D,,,,,,
+backbone.body.layer1,Other,3,64,3,2,1,
+backbone.body.layer1.0,Other,3,64,3,2,1,
+backbone.body.layer1.0.conv1,Conv2D,64,64,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.0.bn1,Other,64,64,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.0.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer1.0.bn2,Other,64,64,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer1.0.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.0.bn3,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.0.relu,ReLU,,,,,,
+backbone.body.layer1.0.downsample,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.0.downsample.0,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.0.downsample.1,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.1,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.1.conv1,Conv2D,256,64,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.1.bn1,Other,256,64,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.1.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer1.1.bn2,Other,64,64,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer1.1.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.1.bn3,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.1.relu,ReLU,,,,,,
+backbone.body.layer1.2,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.2.conv1,Conv2D,256,64,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.2.bn1,Other,256,64,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.2.conv2,Conv2D,64,64,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer1.2.bn2,Other,64,64,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer1.2.conv3,Conv2D,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.2.bn3,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer1.2.relu,ReLU,,,,,,
+backbone.body.layer2,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.0,Other,64,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.0.conv1,Conv2D,256,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.0.bn1,Other,256,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.0.conv2,Conv2D,128,128,"(3, 3)","(2, 2)","(1, 1)",
+backbone.body.layer2.0.bn2,Other,128,128,"(3, 3)","(2, 2)","(1, 1)",
+backbone.body.layer2.0.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.0.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.0.relu,ReLU,,,,,,
+backbone.body.layer2.0.downsample,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.0.downsample.0,Conv2D,256,512,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer2.0.downsample.1,Other,256,512,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer2.1,Other,256,512,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer2.1.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.1.bn1,Other,512,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.1.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer2.1.bn2,Other,128,128,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer2.1.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.1.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.1.relu,ReLU,,,,,,
+backbone.body.layer2.2,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.2.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.2.bn1,Other,512,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.2.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer2.2.bn2,Other,128,128,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer2.2.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.2.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.2.relu,ReLU,,,,,,
+backbone.body.layer2.3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.3.conv1,Conv2D,512,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.3.bn1,Other,512,128,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.3.conv2,Conv2D,128,128,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer2.3.bn2,Other,128,128,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer2.3.conv3,Conv2D,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.3.bn3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer2.3.relu,ReLU,,,,,,
+backbone.body.layer3,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.0,Other,128,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.0.conv1,Conv2D,512,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.0.bn1,Other,512,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.0.conv2,Conv2D,256,256,"(3, 3)","(2, 2)","(1, 1)",
+backbone.body.layer3.0.bn2,Other,256,256,"(3, 3)","(2, 2)","(1, 1)",
+backbone.body.layer3.0.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.0.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.0.relu,ReLU,,,,,,
+backbone.body.layer3.0.downsample,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.0.downsample.0,Conv2D,512,1024,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer3.0.downsample.1,Other,512,1024,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer3.1,Other,512,1024,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer3.1.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.1.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.1.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.1.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.1.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.1.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.1.relu,ReLU,,,,,,
+backbone.body.layer3.2,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.2.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.2.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.2.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.2.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.2.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.2.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.2.relu,ReLU,,,,,,
+backbone.body.layer3.3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.3.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.3.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.3.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.3.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.3.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.3.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.3.relu,ReLU,,,,,,
+backbone.body.layer3.4,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.4.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.4.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.4.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.4.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.4.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.4.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.4.relu,ReLU,,,,,,
+backbone.body.layer3.5,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.5.conv1,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.5.bn1,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.5.conv2,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.5.bn2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer3.5.conv3,Conv2D,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.5.bn3,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer3.5.relu,ReLU,,,,,,
+backbone.body.layer4,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.0,Other,256,1024,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.0.conv1,Conv2D,1024,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.0.bn1,Other,1024,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.0.conv2,Conv2D,512,512,"(3, 3)","(2, 2)","(1, 1)",
+backbone.body.layer4.0.bn2,Other,512,512,"(3, 3)","(2, 2)","(1, 1)",
+backbone.body.layer4.0.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.0.bn3,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.0.relu,ReLU,,,,,,
+backbone.body.layer4.0.downsample,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.0.downsample.0,Conv2D,1024,2048,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer4.0.downsample.1,Other,1024,2048,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer4.1,Other,1024,2048,"(1, 1)","(2, 2)","(0, 0)",
+backbone.body.layer4.1.conv1,Conv2D,2048,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.1.bn1,Other,2048,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.1.conv2,Conv2D,512,512,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer4.1.bn2,Other,512,512,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer4.1.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.1.bn3,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.1.relu,ReLU,,,,,,
+backbone.body.layer4.2,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.2.conv1,Conv2D,2048,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.2.bn1,Other,2048,512,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.2.conv2,Conv2D,512,512,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer4.2.bn2,Other,512,512,"(3, 3)","(1, 1)","(1, 1)",
+backbone.body.layer4.2.conv3,Conv2D,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.2.bn3,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.body.layer4.2.relu,ReLU,,,,,,
+backbone.fpn,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.inner_blocks,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.inner_blocks.0,Other,512,2048,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.inner_blocks.0.0,Conv2D,512,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.inner_blocks.1,Other,512,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.inner_blocks.1.0,Conv2D,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.inner_blocks.2,Other,1024,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.inner_blocks.2.0,Conv2D,2048,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.layer_blocks,Other,2048,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.layer_blocks.0,Other,2048,256,"(1, 1)","(1, 1)","(0, 0)",
+backbone.fpn.layer_blocks.0.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.fpn.layer_blocks.1,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.fpn.layer_blocks.1.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.fpn.layer_blocks.2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.fpn.layer_blocks.2.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.fpn.extra_blocks,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+backbone.fpn.extra_blocks.p6,Conv2D,256,256,"(3, 3)","(2, 2)","(1, 1)",
+backbone.fpn.extra_blocks.p7,Conv2D,256,256,"(3, 3)","(2, 2)","(1, 1)",
+anchor_generator,Other,256,256,"(3, 3)","(2, 2)","(1, 1)",
+head,Other,256,256,"(3, 3)","(2, 2)","(1, 1)",
+head.classification_head,Other,256,256,"(3, 3)","(2, 2)","(1, 1)",
+head.classification_head.conv,Other,256,256,"(3, 3)","(2, 2)","(1, 1)",
+head.classification_head.conv.0,Other,256,256,"(3, 3)","(2, 2)","(1, 1)",
+head.classification_head.conv.0.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.classification_head.conv.0.1,ReLU,,,,,,
+head.classification_head.conv.1,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.classification_head.conv.1.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.classification_head.conv.1.1,ReLU,,,,,,
+head.classification_head.conv.2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.classification_head.conv.2.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.classification_head.conv.2.1,ReLU,,,,,,
+head.classification_head.conv.3,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.classification_head.conv.3.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.classification_head.conv.3.1,ReLU,,,,,,
+head.classification_head.cls_logits,Conv2D,256,819,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head,Other,256,819,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv,Other,256,819,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.0,Other,256,819,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.0.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.0.1,ReLU,,,,,,
+head.regression_head.conv.1,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.1.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.1.1,ReLU,,,,,,
+head.regression_head.conv.2,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.2.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.2.1,ReLU,,,,,,
+head.regression_head.conv.3,Other,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.3.0,Conv2D,256,256,"(3, 3)","(1, 1)","(1, 1)",
+head.regression_head.conv.3.1,ReLU,,,,,,
+head.regression_head.bbox_reg,Conv2D,256,36,"(3, 3)","(1, 1)","(1, 1)",
+transform,Other,256,36,"(3, 3)","(1, 1)","(1, 1)",
